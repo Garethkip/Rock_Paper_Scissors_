@@ -112,11 +112,11 @@ function updateGame(){
 
     let difference = Number(localStorage.getItem("computerpts"))-Number(localStorage.getItem("playerpts"));
     console.log(difference);
-    if(difference>=5){
+    if(difference>=3){
         console.log(`Computer won`);
         winner = `Computer`;
         endGame();
-    }else if(difference<=-5){
+    }else if(difference<=-3){
         console.log(`Player won`);
         winner = `Player`;
         endGame();
