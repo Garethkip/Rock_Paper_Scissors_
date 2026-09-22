@@ -1,6 +1,5 @@
 # 🪨 Rock Paper Scissors
-
-[🔗 **Play the Game Live**]([http://www.myrockpaperscissors.com/](https://garethkip.github.io/Rock_Paper_Scissors_/))
+[🔗 **Play the Game Live**](https://garethkip.github.io/Rock_Paper_Scissors_/)
 
 A simple **Rock Paper Scissors** game built with HTML, CSS, and JavaScript. Choose rock, paper, or scissors and play against the computer.
 
