@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <!-- Hier kun je een extern CSS-bestand koppelen: -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Rock Paper Scissors</h1>
+    </header>
+
+    <main>
+        <div id="score" >
+            <div id = "computerScore"> Computer: 0 pts</div>  
+            <div id = "playerScore">Player: 0 pts</div> 
+        </div>
+
+        <div id="playArea"> 
+
+            <div id="selectionDisplay">    
+                <div class="Choice" id="player1">Computer</div>
+                <div id="vs">VS</div>
+                <div class="Choice" id="player2">Player</div>       
+            </div>
+
+            <div id = "Choices">
+                    <button id="Rock">Rock</button>
+                    <button id="Paper">Paper</button>
+                    <button id="Scissors">Scissors</button>               
+            </div>
+
+        </div>
+
+        <div id="commands">
+            <button class="btns" id="resetbtn">Reset</button>
+
+            <!-- <button class="btns" id="playbtn">PLAY</button>      -->
+        </div>
+    </main>
+
+    <footer id = "footer">
+        
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
