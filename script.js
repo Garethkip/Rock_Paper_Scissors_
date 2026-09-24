@@ -1,5 +1,5 @@
 // game choices
-const choicesArr = ['🪨','📜','✂️','🪨','✂️','📜','✂️','🪨','📜'];
+const choicesArr = ['🪨','📜','✂️'];
 
 const displayArea = document.getElementById('selectionDisplay');
 const computerScore = document.getElementById("computerScore");
@@ -22,11 +22,11 @@ copyright.innerHTML = `
             </p>`;
 
 
-computerScore.innerText = `Computer: ${localStorage.getItem("computerpts")} pts`
-playerScore.innerText = `Player: ${localStorage.getItem("playerpts")} pts`
+computerScore.innerText = localStorage.getItem("computerpts")==null?`Computer: 0 pts`:`Computer: ${localStorage.getItem("computerpts")} pts`;
+playerScore.innerText = localStorage.getItem("playerpts")==null?`Player: 0 pts`:`Player: ${localStorage.getItem("playerpts")} pts`;
 
-player.innerText = localStorage.getItem("playerChoice")==null?`Player`:localStorage.getItem("playerChoice");
-computer.innerText = localStorage.getItem("playerChoice")==null?`Computer`:localStorage.getItem("computerChoice");
+player.innerText = localStorage.getItem("playerChoice")==null?`👱🏿`:localStorage.getItem("playerChoice");
+computer.innerText = localStorage.getItem("playerChoice")==null?`🤖`:localStorage.getItem("computerChoice");
 
 let winner = null;
 let reset = true;
@@ -62,23 +62,29 @@ function resetGame(){
     localStorage.removeItem("computerChoice");
     localStorage.removeItem("playerpts");
     localStorage.removeItem("computerpts");
-    
-    
+       
 }
 
 function endGame(){
-    displayArea.textContent = `${winner} has won! Hurraaay!`;
+    displayArea.innerHTML = `
+    <div>
+    ${winner} has won! Hurraaay!
+    <br>
+    <hr>
+    Press 'RESET' to restart game.
+    </div>`;
+    displayArea.style.width = "80%";
     reset = false;
     resetGame();  
 }
 
 function updateGame(){
-    let computerSelection = Math.floor(Math.random()*9);
+    let computerSelection = Math.floor((Math.random()*30)/10);
     localStorage.setItem("computerChoice",choicesArr[computerSelection]);
 
     if(reset==true){
-        player.innerText = localStorage.getItem("playerChoice")==null?`Player`:localStorage.getItem("playerChoice");
-        computer.innerText = localStorage.getItem("playerChoice")==null?`Computer`:localStorage.getItem("computerChoice");
+        player.innerText = localStorage.getItem("playerChoice")==null?`👱🏿`:localStorage.getItem("playerChoice");
+        computer.innerText = localStorage.getItem("playerChoice")==null?`🤖`:localStorage.getItem("computerChoice");
     }
     
     let playerpts = Number(localStorage.getItem("playerpts"));
